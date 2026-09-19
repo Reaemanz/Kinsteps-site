@@ -1,11 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "io.github.reaemanz.kin",
       "sha256_cert_fingerprints": [
-        "6F:72:23:A6:5B:F8:A7:07:93:EB:87:D0:45:00:F8:83:D5:06:70:BD:BA:83:28:CE:76:6F:DB:1D:38:C9:FD:B6"
+        "6F:72:23:A6:5B:F8:A7:07:93:EB:87:D0:45:00:F8:83:D5:06:70:BD:BA:83:28:CE:76:6F:DB:1D:38:C9:FD:B6",
+        "1B:88:1E:9F:85:AD:39:81:89:DB:C9:D6:02:BA:98:BD:FC:EF:03:51:5B:5F:74:75:45:8C:75:D6:B1:3B:F9:D5"
       ]
     }
   }
