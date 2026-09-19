@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.reaemanz.kin",
+      "sha256_cert_fingerprints": [
+        "6F:72:23:A6:5B:F8:A7:07:93:EB:87:D0:45:00:F8:83:D5:06:70:BD:BA:83:28:CE:76:6F:DB:1D:38:C9:FD:B6"
+      ]
+    }
+  }
+]
