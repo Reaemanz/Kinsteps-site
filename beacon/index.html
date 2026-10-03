@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Beacon — Kin</title>
+<meta name="description" content="Follow a Kin athlete's live location while they're out.">
+<meta name="theme-color" content="#050608">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+  .beacon-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .beacon-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .beacon-name { font-size: 1.5rem; font-weight: 800; margin: 0; }
+  .beacon-status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .beacon-status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .beacon-status.live { color: #ff6b35; }
+  .beacon-status.live .dot { background: #ff6b35; animation: pulse 1.6s ease-out infinite; }
+  .beacon-status.ended { color: #8a949b; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.6); }
+    100% { box-shadow: 0 0 0 12px rgba(255, 107, 53, 0); }
+  }
+  #map { height: 60vh; min-height: 320px; border-radius: var(--radius); margin-top: 16px; background: #0b0e12; }
+  .beacon-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .beacon-stats div { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  .beacon-stats b { display: block; font-size: 1.25rem; }
+  .beacon-stats span { color: #8a949b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .leaflet-container { font: inherit; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="brand" href="/">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 3v18"/><path d="M19 4l-9 8 9 8"/>
+      </svg>
+      KIN
+    </a>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="padding-block: 40px 48px;">
+    <p class="eyebrow">Live Beacon</p>
+
+    <div class="beacon-card" id="card" hidden>
+      <div class="beacon-head">
+        <h1 class="beacon-name" id="name"></h1>
+        <span class="beacon-status" id="status"><span class="dot"></span><span id="status-text"></span></span>
+      </div>
+      <div id="map"></div>
+      <div class="beacon-stats">
+        <div><b id="sport"></b><span>Activity</span></div>
+        <div><b id="distance"></b><span>Distance</span></div>
+        <div><b id="updated"></b><span>Last seen</span></div>
+      </div>
+    </div>
+
+    <div class="callout" id="message" hidden>
+      <p id="message-text"></p>
+    </div>
+  </section>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+  // The Kin backend's publishable key: public by design, and it can only call get_beacon,
+  // which returns one beacon for the exact code in this page's link and nothing else.
+  var API = "https://iorcmdxuocrwtiyrcyzh.supabase.co/rest/v1/rpc/get_beacon";
+  var KEY = "sb_publishable_IpATwk6K0cVh_5FQm67enw_uyBsMzgx";
+  var SPORTS = { RUN: "Run", WALK: "Walk", RIDE: "Ride" };
+
+  var token = new URLSearchParams(location.search).get("t");
+  var map = null, marker = null, timer = null;
+
+  function show(text) {
+    document.getElementById("card").hidden = true;
+    document.getElementById("message").hidden = false;
+    document.getElementById("message-text").textContent = text;
+  }
+
+  function ago(ms) {
+    var s = Math.max(0, Math.round((Date.now() - ms) / 1000));
+    if (s < 60) return "Just now";
+    var m = Math.round(s / 60);
+    if (m < 60) return m + " min ago";
+    return Math.round(m / 60) + " h ago";
+  }
+
+  function render(b) {
+    document.getElementById("message").hidden = true;
+    document.getElementById("card").hidden = false;
+    document.getElementById("name").textContent = b.name;
+    document.getElementById("sport").textContent = SPORTS[b.activity_type] || b.activity_type;
+    document.getElementById("distance").textContent = (b.distance_m / 1000).toFixed(2) + " km";
+    document.getElementById("updated").textContent = ago(b.updated_at);
+    var status = document.getElementById("status");
+    status.className = "beacon-status " + (b.active ? "live" : "ended");
+    document.getElementById("status-text").textContent = b.active ? "Live" : "Ended";
+    document.title = b.name + (b.active ? " is out now" : "'s Beacon has ended") + " — Kin";
+
+    if (b.lat == null || b.lng == null) return;
+    var here = [b.lat, b.lng];
+    if (!map) {
+      map = L.map("map", { zoomControl: true }).setView(here, 16);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+      }).addTo(map);
+      marker = L.circleMarker(here, {
+        radius: 10, color: "#ffffff", weight: 3, fillColor: "#ff6b35", fillOpacity: 1
+      }).addTo(map);
+    } else {
+      marker.setLatLng(here);
+      map.panTo(here);
+    }
+    if (!b.active && timer) { clearInterval(timer); timer = null; }
+  }
+
+  function load() {
+    fetch(API, {
+      method: "POST",
+      headers: { "apikey": KEY, "Authorization": "Bearer " + KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_token: token })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (rows) {
+        if (!rows || !rows.length) { show("This Beacon has ended or the link is not valid."); return; }
+        render(rows[0]);
+      })
+      .catch(function () { show("Couldn't reach Kin just now. This page will keep trying."); });
+  }
+
+  if (!token) {
+    show("This link is missing its Beacon code. Ask the person who sent it to share it again.");
+  } else {
+    load();
+    timer = setInterval(load, 20000);
+  }
+</script>
+</body>
+</html>
