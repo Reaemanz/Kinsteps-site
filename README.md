@@ -15,6 +15,8 @@ Publish this directory — not the repository it lives in, which also holds inte
 | `CNAME` | Binds the Pages site to the apex domain. |
 | `404.html` | A static host has no file at `/pair/<code>`, so that path lands here. It carries the pairing page and reads the code out of the URL. |
 | `pair/index.html` | The same page for a bare `/pair/` with no code. |
+| `index.html`, `home.css` | The landing page, styled on its own so the policy and utility pages (which share `styles.css`) can't be broken by a redesign. |
+| `img/*.jpg` | App screenshots for the landing page, 600 px wide. They come from the iOS CI run's sample data, which uses made-up names (Alex Morgan, Sam Carter, Grace Bennett); keep it that way, never a real person's account. |
 
 ## Keeping assetlinks.json correct
 
