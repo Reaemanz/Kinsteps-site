@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Live Beacon — Kin</title>
 <meta name="description" content="Follow a Kin athlete's live location while they're out.">
-<meta name="theme-color" content="#050608">
+<meta name="theme-color" content="#ffffff">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/styles.css">
@@ -19,24 +19,24 @@
     margin-top: 24px;
   }
   .beacon-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .beacon-name { font-size: 1.5rem; font-weight: 800; margin: 0; }
+  .beacon-name { font-size: 1.5rem; font-weight: 400; margin: 0; }
   .beacon-status {
     display: inline-flex; align-items: center; gap: 8px;
-    font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 500; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
   }
   .beacon-status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
-  .beacon-status.live { color: #ff6b35; }
-  .beacon-status.live .dot { background: #ff6b35; animation: pulse 1.6s ease-out infinite; }
-  .beacon-status.ended { color: #8a949b; }
+  .beacon-status.live { color: #d2431a; }
+  .beacon-status.live .dot { background: #d2431a; animation: pulse 1.6s ease-out infinite; }
+  .beacon-status.ended { color: #857e78; }
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.6); }
-    100% { box-shadow: 0 0 0 12px rgba(255, 107, 53, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(210, 67, 26, 0.6); }
+    100% { box-shadow: 0 0 0 12px rgba(210, 67, 26, 0); }
   }
-  #map { height: 60vh; min-height: 320px; border-radius: var(--radius); margin-top: 16px; background: #0b0e12; }
+  #map { height: 60vh; min-height: 320px; border-radius: var(--radius); margin-top: 16px; background: #efece8; }
   .beacon-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
   .beacon-stats div { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
-  .beacon-stats b { display: block; font-size: 1.25rem; }
-  .beacon-stats span { color: #8a949b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .beacon-stats b { display: block; font-size: 1.25rem; font-weight: 400; }
+  .beacon-stats span { color: #857e78; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
   .leaflet-container { font: inherit; }
 </style>
 </head>
@@ -120,12 +120,12 @@
     var here = [b.lat, b.lng];
     if (!map) {
       map = L.map("map", { zoomControl: true }).setView(here, 16);
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         maxZoom: 19,
         attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
       }).addTo(map);
       marker = L.circleMarker(here, {
-        radius: 10, color: "#ffffff", weight: 3, fillColor: "#ff6b35", fillOpacity: 1
+        radius: 10, color: "#ffffff", weight: 3, fillColor: "#d2431a", fillOpacity: 1
       }).addTo(map);
     } else {
       marker.setLatLng(here);
