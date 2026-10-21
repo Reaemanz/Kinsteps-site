@@ -1,7 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#d2431a"/>
-  <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M11 7v18"/>
-    <path d="M23 8l-9 8 9 8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 16.5 75 75">
+  <!-- The launcher icon, flattened: the KIN lettermark (ic_kin_logo.xml) in dark-theme ember on near-black. -->
+  <rect x="16" y="16.5" width="75" height="75" rx="16" fill="#120a08"/>
+  <g fill="none" stroke="#ff6b3d" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6">
+    <path d="M25 39v30"/>
+    <path d="M36.5 39 28 54l8.5 15"/>
+  </g>
+  <g fill="#ff6b3d">
+    <path transform="translate(33.93 34) scale(1.667)" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/>
+    <path d="M67 39h8v30h-8z"/>
+    <path d="M78 39h8v30h-8z"/>
+    <path d="M67 39h8l11 30h-8z"/>
   </g>
 </svg>
