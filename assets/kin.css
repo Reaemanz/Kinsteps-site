@@ -172,8 +172,30 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.01em; }
 .feature-card p { margin: 10px 0 0; color: var(--text-2); font-size: 16px; }
 .feature-card .feature-note { margin-top: auto; padding-top: 16px; font-size: 14px; color: var(--text-3); }
 
+/* Races: copy beside a stack of horizontal race cards, each led by a satellite picture. */
+.races-row { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.races-list { display: grid; gap: 14px; }
+.race-card {
+  display: grid; grid-template-columns: 132px 1fr; min-height: 132px;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg);
+}
+.race-img { position: relative; background: var(--tile); }
+.race-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.race-date {
+  position: absolute; top: 10px; left: 10px; display: grid; justify-items: center;
+  padding: 5px 10px; border-radius: 10px; background: rgba(10, 8, 7, .58); color: #fff;
+  font-size: 20px; font-weight: 500; line-height: 1.15;
+}
+.race-date span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+.race-body { padding: 18px 20px; align-self: center; }
+.race-body h3 { font-size: 19px; }
+.race-body p { margin: 4px 0 0; color: var(--text-2); font-size: 15px; }
+.race-pills { display: flex; gap: 6px; margin-top: 12px; }
+.race-pills span { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--band); color: var(--ink); }
+.race-credit { margin: 2px 0 0; font-size: 12px; color: var(--text-3); }
+
 /* Spotlight: a feature with its screens. */
-.spotlight + .spotlight { padding-top: 0; }
+.spotlight + .spotlight, .races + .spotlight { padding-top: 0; }
 .spotlight-row { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 .flip .spotlight-media { order: 2; }
 .spotlight-media {
@@ -295,7 +317,7 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.01em; }
   .hero-media { aspect-ratio: 4 / 3; }
   .hero-media .phone { width: 150px; left: auto; right: 24px; bottom: 24px; }
 
-  .spotlight-row { grid-template-columns: 1fr; gap: 40px; }
+  .spotlight-row, .races-row { grid-template-columns: 1fr; gap: 40px; }
   .flip .spotlight-media { order: 0; }
   .spotlight-media { min-height: 0; padding: 40px 0; }
 
@@ -320,6 +342,9 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.01em; }
   .tile { min-height: 400px; }
   .tile-photo .tile-copy, .tile-screen .tile-copy { padding: 24px; }
   .tile-phone { width: 210px; }
+  .race-card { grid-template-columns: 108px 1fr; min-height: 116px; }
+  .race-body { padding: 14px 16px; }
+  .race-body h3 { font-size: 17px; }
   .strip-grid { grid-template-columns: 1fr; gap: 32px; }
   .features-grid { grid-template-columns: 1fr; gap: 16px; }
   .feature-card { padding: 24px; }
