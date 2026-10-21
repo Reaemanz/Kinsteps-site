@@ -2,30 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy — Kin</title>
 <meta name="description" content="What Kin collects, what stays on your phone, and what leaves it.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css">
+<link rel="canonical" href="https://kinsteps.app/privacy.html">
+<link rel="preload" href="/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/kin.css">
+<meta property="og:title" content="Privacy Policy — Kin">
+<meta property="og:description" content="What Kin collects, what stays on your phone, and what leaves it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kinsteps.app/privacy.html">
+<meta property="og:image" content="https://kinsteps.app/img/photo-bridge.jpg">
 </head>
-<body>
+<body class="page-doc">
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="wrap">
+<div class="promo">
+  <p>Kin is free on Android. iPhone is on the way. <a href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get it on Google Play</a></p>
+</div>
 
-  <header class="masthead">
-    <a class="brand" href="/">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M5 3v18"/><path d="M19 4l-9 8 9 8"/>
-      </svg>
-      KIN
-    </a>
-    <nav>
-      <a href="/">Home</a>
+<header class="header" id="header">
+  <div class="container header-row">
+    <a class="logo" href="/" aria-label="Kin home">
+<span class="logo-mark" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M19 4l-9 8 9 8"/></svg></span>KIN
+</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/#track">Track</a><a href="/#compete">Compete</a><a href="/#together">Together</a><a href="/#privacy">Privacy</a><a href="/#faq">FAQ</a>
     </nav>
-  </header>
+    <div class="header-end">
+      <a class="btn btn-primary btn-small" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get the app</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span class="when-closed">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
+</svg>
+</span><span class="when-open">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/>
+</svg>
+</span>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <div class="prose">
+<main id="main">
+<div class="container">
+  <article class="prose">
 
     <h1>Privacy Policy</h1>
     <p class="meta">Last updated 3 October 2026</p>
@@ -166,18 +189,50 @@
     <h2>Contact</h2>
     <p><a href="mailto:privacy@kinsteps.app">privacy@kinsteps.app</a></p>
 
-  </div>
 
-  <footer>
-    <span>&copy; 2026 Kin</span>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/delete-account.html">Delete account</a>
-      <a href="mailto:privacy@kinsteps.app">Contact</a>
-    </nav>
-  </footer>
-
+  </article>
 </div>
 
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/" aria-label="Kin home">
+<span class="logo-mark" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M19 4l-9 8 9 8"/></svg></span>KIN
+</a>
+        <p>Run, walk and ride with the people who push you.</p>
+      </div>
+      
+      <nav class="footer-col" aria-label="The app">
+        <h2>The app</h2>
+        <a href="/#track">Track</a><a href="/#compete">Compete</a><a href="/#share">Share</a><a href="/#together">Together</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Get Kin">
+        <h2>Get Kin</h2>
+        <a href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Google Play</a><a href="/#faq">iPhone (coming soon)</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Your data">
+        <h2>Your data</h2>
+        <a href="/privacy.html">Privacy policy</a><a href="/delete-account.html">Delete your account</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Help">
+        <h2>Help</h2>
+        <a href="/#faq">Questions</a><a href="mailto:privacy@kinsteps.app">Contact</a>
+      </nav>
+      
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kin</span>
+      <span>Google Play and the Google Play logo are trademarks of Google LLC.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/kin.js" defer></script>
 </body>
 </html>

@@ -7,255 +7,463 @@
 <meta name="description" content="Kin tracks every run, walk and ride, then puts your friends right alongside you: weekly challenges, segments, head-to-heads, shared runs and planned workouts. Free on Android.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://kinsteps.app/">
 <link rel="preload" href="/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/assets/kin.css">
 <meta property="og:title" content="Kin — run, walk and ride with the people who push you">
-<meta property="og:description" content="Track every move. Race your friends, not strangers. Free on Android.">
+<meta property="og:description" content="Kin tracks every run, walk and ride, then puts your friends right alongside you: weekly challenges, segments, head-to-heads, shared runs and planned workouts. Free on Android.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kinsteps.app/">
 <meta property="og:image" content="https://kinsteps.app/img/photo-bridge.jpg">
 </head>
-<body>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="nav" id="nav">
-  <div class="container">
+<div class="promo">
+  <p>Kin is free on Android. iPhone is on the way. <a href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get it on Google Play</a></p>
+</div>
+
+<header class="header" id="header">
+  <div class="container header-row">
     <a class="logo" href="/" aria-label="Kin home">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M19 4l-9 8 9 8"/></svg>
-      </span>
-      KIN
-    </a>
-    <nav class="nav-links" aria-label="Sections">
-      <a href="#track">Track</a>
-      <a href="#compete">Compete</a>
-      <a href="#share">Share</a>
-      <a href="#together">Together</a>
-      <a href="/privacy.html">Privacy</a>
+<span class="logo-mark" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M19 4l-9 8 9 8"/></svg></span>KIN
+</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/#track">Track</a><a href="/#compete">Compete</a><a href="/#together">Together</a><a href="/#privacy">Privacy</a><a href="/#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-small" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get Kin</a>
+    <div class="header-end">
+      <a class="btn btn-primary btn-small" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get the app</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span class="when-closed">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
+</svg>
+</span><span class="when-open">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/>
+</svg>
+</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <section class="hero">
-    <div class="container">
-      <div>
-        <p class="kicker">Free on Android · iPhone coming soon</p>
-        <h1>Every step counts.<br><span class="muted">Every friend counts more.</span></h1>
-        <p class="lede">
-          Kin tracks your runs, walks and rides, then puts the people who push you right
-          alongside you: challenges, segments, head-to-heads and runs you share.
-        </p>
-        <div class="cta-row">
-          <a class="store" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">
-            <svg width="24" height="26" viewBox="0 0 26 28" aria-hidden="true">
-              <path d="M1.2 1.1 14.6 14 1.2 26.9c-.5-.3-.8-.9-.8-1.6V2.7c0-.7.3-1.3.8-1.6Z" fill="#00d7fe"/>
-              <path d="m19.1 9.6-4.5 4.4-13.4-12.9c.2-.1.4-.2.7-.2.4 0 .8.1 1.1.3l16.1 8.4Z" fill="#00f076"/>
-              <path d="m19.1 18.4-16 8.4c-.4.2-.8.3-1.2.3-.3 0-.5-.1-.7-.2L14.6 14l4.5 4.4Z" fill="#ff3a44"/>
-              <path d="m24.4 15.6-5.3 2.8-4.5-4.4 4.5-4.4 5.3 2.8c1.3.7 1.3 2.5 0 3.2Z" fill="#ffd400"/>
-            </svg>
-            <span><small>GET IT ON</small><strong>Google Play</strong></span>
-          </a>
-          <span class="store soon" aria-label="iPhone app coming soon">
-            <svg width="20" height="24" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><path d="M18.2 13.8c0-3.2 2.6-4.7 2.7-4.8-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.2-4.8 1.2s-2.5-1.1-4.2-1.1C5.1 6.6 3.1 7.9 2 9.9c-2.3 3.9-.6 9.8 1.6 13 1.1 1.6 2.4 3.3 4.1 3.2 1.6-.1 2.3-1 4.2-1s2.5 1 4.2 1 2.8-1.6 3.9-3.2c1.2-1.8 1.7-3.5 1.7-3.6 0 0-3.4-1.3-3.5-5.5ZM15 4.3c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.8 1.9-.8.9-1.6 2.5-1.4 3.9 1.5.1 3-.7 3.9-1.7Z"/></svg>
-            <span><small>COMING SOON</small><strong>iPhone</strong></span>
-          </span>
-        </div>
-      </div>
 
-      <div class="hero-media">
-        <img class="hero-photo" src="/img/photo-bridge.jpg" alt="Two runners crossing a bridge into the city in the morning" width="960" height="720" fetchpriority="high">
-        <div class="phone" aria-hidden="true"><img src="/img/challenge.jpg" alt="" width="600" height="1304"></div>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Free on Android</p>
+    <h1>Every step counts. Every friend counts more.</h1>
+    <p class="lede">Kin tracks your runs, walks and rides, then puts the people who push you right alongside you.</p>
+    <div class="cta-row">
+      
+<a class="store" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">
+  <svg width="22" height="24" viewBox="0 0 26 28" aria-hidden="true">
+    <path d="M1.2 1.1 14.6 14 1.2 26.9c-.5-.3-.8-.9-.8-1.6V2.7c0-.7.3-1.3.8-1.6Z" fill="#00d7fe"/>
+    <path d="m19.1 9.6-4.5 4.4-13.4-12.9c.2-.1.4-.2.7-.2.4 0 .8.1 1.1.3l16.1 8.4Z" fill="#00f076"/>
+    <path d="m19.1 18.4-16 8.4c-.4.2-.8.3-1.2.3-.3 0-.5-.1-.7-.2L14.6 14l4.5 4.4Z" fill="#ff3a44"/>
+    <path d="m24.4 15.6-5.3 2.8-4.5-4.4 4.5-4.4 5.3 2.8c1.3.7 1.3 2.5 0 3.2Z" fill="#ffd400"/>
+  </svg>
+  <span><small>GET IT ON</small>Google Play</span>
+</a>
+
+      <a class="text-link" href="#track">See what it does</a>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="/img/photo-bridge.jpg" alt="Two runners crossing a bridge into the city in the morning" width="960" height="720" fetchpriority="high">
+    <div class="phone" aria-hidden="true"><img src="/img/challenge.jpg" alt="" width="600" height="1304"></div>
+  </div>
+</section>
+
+
+
+<section class="section slider" data-slider>
+  <div class="container">
+    <div class="section-bar">
+      <h2>However you move</h2>
+      <div class="slider-arrows">
+        <button type="button" class="round" data-prev aria-label="Previous">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/>
+</svg>
+</button>
+        <button type="button" class="round" data-next aria-label="Next">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/>
+</svg>
+</button>
       </div>
     </div>
-  </section>
+    <ul class="slider-track" data-track>
+      
+      <li class="slide">
+        <a href="#track">
+          <div class="slide-img"><img src="/img/photo-marathon.jpg" alt="Runners in a city road race" width="1024" height="680" loading="lazy"></div>
+          <h3>Running</h3>
+          <p>Pace, splits and your fastest 5K inside every run.</p>
+          <span class="more">Learn more 
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+</svg>
+</span>
+        </a>
+      </li>
+      
+      <li class="slide">
+        <a href="#track">
+          <div class="slide-img"><img src="/img/photo-city.jpg" alt="A runner on a waterfront path with the city skyline behind" width="960" height="639" loading="lazy"></div>
+          <h3>Walking</h3>
+          <p>Steps counted all day, with goals that keep the streak alive.</p>
+          <span class="more">Learn more 
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+</svg>
+</span>
+        </a>
+      </li>
+      
+      <li class="slide">
+        <a href="#track">
+          <div class="slide-img"><img src="/img/photo-park.jpg" alt="Runners and cyclists on a park road in autumn" width="960" height="640" loading="lazy"></div>
+          <h3>Cycling</h3>
+          <p>Rides drawn on the map, climbs and speed included.</p>
+          <span class="more">Learn more 
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+</svg>
+</span>
+        </a>
+      </li>
+      
+      <li class="slide">
+        <a href="#track">
+          <div class="slide-img"><img src="/img/photo-trail.jpg" alt="Two friends running side by side on a forest trail" width="1024" height="683" loading="lazy"></div>
+          <h3>Trails</h3>
+          <p>Clean routes off-road, with GPS jitter filtered out.</p>
+          <span class="more">Learn more 
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+</svg>
+</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</section>
 
-  <section class="facts" aria-label="Kin at a glance">
-    <div class="container">
-      <div class="fact"><b>Run, walk, ride</b><span>GPS-tracked, every sport</span></div>
-      <div class="fact"><b>25 languages</b><span>from Arabic to Vietnamese</span></div>
-      <div class="fact"><b>No account</b><span>needed to start</span></div>
-      <div class="fact"><b>Free</b><span>to download</span></div>
-    </div>
-  </section>
 
-  <section class="section" id="track">
-    <div class="container">
-      <div class="feature">
-        <div class="feature-media with-photo reveal">
-          <img class="photo" src="/img/photo-park.jpg" alt="Runners and cyclists on a park road in autumn" width="960" height="640" loading="lazy">
-          <div class="phone"><img src="/img/summary.jpg" alt="A finished run in Kin: the route on a map, 6.42 km, time, pace, elevation, and two personal records" width="600" height="1304" loading="lazy"></div>
-        </div>
-        <div class="feature-copy reveal">
-          <p class="eyebrow">Track</p>
-          <h2>Every run, walk and ride. Down to the kilometre.</h2>
-          <p>Start, go, finish. Kin draws your route, counts your steps all day, and tells you what the effort was worth.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Clean routes.</b> GPS jitter is filtered out, so waiting at a crossing doesn&rsquo;t pile up distance.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Best efforts.</b> Your fastest 1K, 5K and 10K inside every activity, with a gold PR the day you beat one.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Splits, pace and climb.</b> Every kilometre laid out, the quickest one lit.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section paper" id="compete">
-    <div class="container">
-      <div class="feature flip">
-        <div class="feature-media reveal">
-          <div class="phone"><img src="/img/challenge.jpg" alt="The weekly step challenge: you against the leader, with a split bar and the whole board" width="600" height="1304" loading="lazy"></div>
-          <div class="phone small"><img src="/img/segments.jpg" alt="A segment with its leaderboard among friends" width="600" height="1304" loading="lazy"></div>
-        </div>
-        <div class="feature-copy reveal">
-          <p class="eyebrow">Compete</p>
-          <h2>Race your friends, not strangers.</h2>
-          <p>A leaderboard means more when you know everyone on it. Kin ranks you against the people you actually train with.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Weekly challenges.</b> Today, this week, this month: one board, the person to catch right at the top.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Segments.</b> Mark the hill, the sprint, the loop by the lake. Every pass is timed, and friends race you for the top spot.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Head-to-head.</b> Swipe through the last two weeks against any friend, one day at a time. Crown for the winner.</span></li>
-          </ul>
-        </div>
-      </div>
+<section class="section spotlight" id="track">
+  <div class="container spotlight-row">
+    <div class="spotlight-media">
+      
+      <div class="phone"><img src="/img/summary.jpg" alt="A finished run in Kin: the route on a map, 6.42 km, time, pace, elevation, and two personal records" width="600" height="1304" loading="lazy"></div>
+      
     </div>
-  </section>
+    <div class="spotlight-copy">
+      <p class="eyebrow">Track</p>
+      <h2>Every run, walk and ride. Down to the kilometre.</h2>
+      <p class="lede">Start, go, finish. Kin draws your route, counts your steps all day, and tells you what the effort was worth.</p>
+      <ul class="ticks">
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Clean routes.</b> GPS jitter is filtered out, so waiting at a crossing doesn&rsquo;t pile up distance.</span></li>
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Best efforts.</b> Your fastest 1K, 5K and 10K inside every activity, with a gold PR the day you beat one.</span></li>
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Splits, pace and climb.</b> Every kilometre laid out, the quickest one lit.</span></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="share">
-    <div class="container">
-      <div class="feature">
-        <div class="feature-media reveal">
-          <div class="phone"><img src="/img/share-card.jpg" alt="A run's share card: the route as line art, 6.42 km, a 5K personal record" width="600" height="1304" loading="lazy"></div>
-          <div class="phone small"><img src="/img/recap.jpg" alt="The month in review card: distance, time, steps, a calendar of days" width="600" height="1304" loading="lazy"></div>
-        </div>
-        <div class="feature-copy reveal">
-          <p class="eyebrow">Share</p>
-          <h2>Cards worth posting.</h2>
-          <p>Every activity gets a card made to be shared: your route drawn clean, the distance big, the record in gold. Save it, post it to the Kin feed, or send it anywhere.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Month and year in review.</b> Your totals, your best day, and every day of the period as a calendar that glows.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span><b>Badges that mean something.</b> Struck medals from bronze to platinum, from a first 5K to a marathon.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section paper" id="together">
-    <div class="container">
-      <div class="together-head">
-        <div class="section-head reveal">
-          <p class="eyebrow">Together</p>
-          <h2>The run is better with company.</h2>
-          <p>Kin is built around the few people who get you out of the door, not a follower count.</p>
-        </div>
-        <div class="photo-pair reveal">
-          <img src="/img/photo-trail.jpg" alt="Two friends running side by side on a forest trail" width="1024" height="683" loading="lazy">
-          <img src="/img/photo-city.jpg" alt="A runner on a waterfront path with the city skyline behind" width="960" height="639" loading="lazy">
-        </div>
-      </div>
-      <div class="tiles">
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/><path d="M8 14h3"/></svg></div>
-          <h3>Plan it together</h3>
-          <p>Put a run, ride or gym session on the calendar and invite friends. Once they&rsquo;re in, everyone gets the same reminder before it starts.</p>
-        </article>
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3.2 3.2 0 0 1 0 6"/><path d="M17.5 14.5a5.5 5.5 0 0 1 3 5"/></svg></div>
-          <h3>Run Together</h3>
-          <p>Start a shared run with your crew. Everyone records on their own phone; Kin adds up the distance, shows who&rsquo;s out right now, and ranks the day.</p>
-        </article>
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M8.5 15.5a5 5 0 0 1 0-7"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M5.6 18.4a9 9 0 0 1 0-12.8"/><path d="M18.4 5.6a9 9 0 0 1 0 12.8"/></svg></div>
-          <h3>Beacon</h3>
-          <p>Heading out alone or after dark? Turn on Beacon and the people you send the link to can see where you are, until you finish.</p>
-        </article>
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
-          <h3>Feed and kudos</h3>
-          <p>Your friends&rsquo; runs with their routes and records, photos and videos. Give kudos, leave a comment, keep each other going.</p>
-        </article>
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
-          <h3>Groups</h3>
-          <p>The running club, the office, the family. Each group gets its own board, so you know exactly which crew you&rsquo;re winning.</p>
-        </article>
-        <article class="tile reveal">
-          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>Messages</h3>
-          <p>Plan tomorrow&rsquo;s route, trade photos, trash-talk the leaderboard. One chat per friend, right next to your stats.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="privacy reveal">
-        <div>
-          <p class="eyebrow">Your data</p>
-          <h2>Yours first.</h2>
-          <p style="color: var(--text-2); font-size: 19px; font-weight: 300; margin: 0">Kin works fully without an account, and keeps your history on your phone. You decide what goes further.</p>
-        </div>
-        <ul>
-          <li><b>No account needed</b>Steps, activities, routes and goals live on your device until you choose to sign in.</li>
-          <li><b>Share on purpose</b>A route only leaves your phone when you post that activity, create a segment, or switch on Beacon for a run.</li>
-          <li><b>Nothing sold</b>Your health, step and location data are never sold or handed to advertisers.</li>
-          <li><b>Gone when you say</b>Delete your account from inside the app, and everything on the server goes with it. <a href="/privacy.html">Read the privacy policy</a>.</li>
-        </ul>
-      </div>
+<section class="section spotlight flip" id="compete">
+  <div class="container spotlight-row">
+    <div class="spotlight-media pair">
+      
+      <div class="phone"><img src="/img/challenge.jpg" alt="The weekly step challenge: you against the leader, with a split bar and the whole board" width="600" height="1304" loading="lazy"></div>
+      
+      <div class="phone"><img src="/img/segments.jpg" alt="A segment with its leaderboard among friends" width="600" height="1304" loading="lazy"></div>
+      
     </div>
-  </section>
+    <div class="spotlight-copy">
+      <p class="eyebrow">Compete</p>
+      <h2>Race your friends, not strangers.</h2>
+      <p class="lede">A leaderboard means more when you know everyone on it. Kin ranks you against the people you actually train with.</p>
+      <ul class="ticks">
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Weekly challenges.</b> Today, this week, this month: one board, the person to catch right at the top.</span></li>
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Segments.</b> Mark the hill, the sprint, the loop by the lake. Every pass is timed, and friends race you for the top spot.</span></li>
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Head-to-head.</b> Swipe through the last two weeks against any friend, one day at a time.</span></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <section class="final">
-    <div class="container">
-      <div class="final-band reveal">
-        <div class="final-copy">
-          <h2>Your next run starts with a friend.</h2>
-          <p>Download Kin, add the people who push you, and see who&rsquo;s ahead by Sunday.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get Kin on Google Play</a>
-            <a class="btn btn-ghost" href="#track">See what it does</a>
-          </div>
-        </div>
-      </div>
+
+
+<section class="section spotlight" id="share">
+  <div class="container spotlight-row">
+    <div class="spotlight-media pair">
+      
+      <div class="phone"><img src="/img/share-card.jpg" alt="A run&#39;s share card: the route as line art, 6.42 km, a 5K personal record" width="600" height="1304" loading="lazy"></div>
+      
+      <div class="phone"><img src="/img/recap.jpg" alt="The month in review card: distance, time, steps, a calendar of days" width="600" height="1304" loading="lazy"></div>
+      
     </div>
-  </section>
+    <div class="spotlight-copy">
+      <p class="eyebrow">Share</p>
+      <h2>Cards worth posting.</h2>
+      <p class="lede">Every activity gets a card made to be shared: your route drawn clean, the distance big, the record in gold.</p>
+      <ul class="ticks">
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Month and year in review.</b> Your totals, your best day, and every day of the period as a calendar.</span></li>
+        
+        <li>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/>
+</svg>
+<span><b>Badges that mean something.</b> Struck medals from bronze to platinum, from a first 5K to a marathon.</span></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section class="section message" id="together">
+  <div class="container">
+    <p class="eyebrow">Together</p>
+    <h2>The run is better with company.</h2>
+    <p class="lede">Kin is built around the few people who get you out of the door, not a follower count.</p>
+  </div>
+</section>
+
+
+<section class="collection">
+  <div class="container collection-grid">
+    
+    
+    <article class="tile tile-photo">
+      <img src="/img/photo-marathon.jpg" alt="A crowd of runners together on a city road" width="1024" height="680" loading="lazy">
+      <div class="tile-copy">
+        <h3>Run Together</h3>
+        <p>Start a shared run with your crew. Everyone records on their own phone; Kin adds up the distance and shows who&rsquo;s out right now.</p>
+      </div>
+    </article>
+    
+    
+    
+    <article class="tile tile-screen">
+      <div class="tile-copy">
+        <h3>Plan it together</h3>
+        <p>Put a run, ride or gym session on the calendar and invite friends. Everyone gets the same reminder before it starts.</p>
+      </div>
+      <div class="tile-phone"><img src="/img/calendar.jpg" alt="The workout plan: an evening 5K this Friday, a week calendar, and who is going" width="600" height="1067" loading="lazy"></div>
+    </article>
+    
+    
+    
+    <article class="tile tile-screen">
+      <div class="tile-copy">
+        <h3>Feed and kudos</h3>
+        <p>Your friends&rsquo; runs with their routes and records, photos and videos. Give kudos, keep each other going.</p>
+      </div>
+      <div class="tile-phone"><img src="/img/feed.jpg" alt="The feed: this week&#39;s totals, friends&#39; stories, and a friend&#39;s morning run" width="600" height="1067" loading="lazy"></div>
+    </article>
+    
+    
+    
+    <article class="tile tile-photo">
+      <img src="/img/photo-trail.jpg" alt="Two friends running side by side on a forest trail" width="1024" height="683" loading="lazy">
+      <div class="tile-copy">
+        <h3>Beacon</h3>
+        <p>Heading out alone or after dark? The people you send the link to can see where you are, until you finish.</p>
+      </div>
+    </article>
+    
+    
+  </div>
+</section>
+
+
+
+<section class="section band strip" id="privacy">
+  <div class="container">
+    <h2 class="center">Your data, yours first</h2>
+    <ul class="strip-grid">
+      
+      <li>
+        <span class="strip-icon">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>
+</svg>
+</span>
+        <h3>No account needed</h3>
+        <p>Steps, activities and routes live on your device until you choose to sign in.</p>
+      </li>
+      
+      <li>
+        <span class="strip-icon">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8"/>
+</svg>
+</span>
+        <h3>Share on purpose</h3>
+        <p>A route only leaves your phone when you post it, make a segment, or switch on Beacon.</p>
+      </li>
+      
+      <li>
+        <span class="strip-icon">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7.5-3.6 7.5-9.4V5.4L12 2.8 4.5 5.4v6.2C4.5 17.4 12 21 12 21Z"/><path d="M9 12l2.2 2.2L15.5 10"/>
+</svg>
+</span>
+        <h3>Nothing sold</h3>
+        <p>Your health, step and location data are never sold or handed to advertisers.</p>
+      </li>
+      
+      <li>
+        <span class="strip-icon">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5h16"/><path d="M9.5 6.5V4.2h5v2.3"/><path d="M6.5 6.5l.9 13.3h9.2l.9-13.3"/>
+</svg>
+</span>
+        <h3>Gone when you say</h3>
+        <p>Delete your account in the app and everything on the server goes with it.</p>
+      </li>
+      
+    </ul>
+    <p class="center"><a class="btn btn-outline" href="/privacy.html">Read the privacy policy</a></p>
+  </div>
+</section>
+
+
+
+<section class="section faq" id="faq">
+  <div class="container faq-row">
+    <h2>Questions, answered</h2>
+    <div class="faq-list">
+      
+      <details>
+        <summary>Is Kin free?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>Yes. Kin is free to download and every tracking, challenge and social feature is free. An optional Premium removes ads and adds extra share-card themes and CSV and GPX export.</p>
+      </details>
+      
+      <details>
+        <summary>Do I need an account?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>No. Kin works fully without one, and keeps your history on your phone. Sign in only when you want friends, challenges and the feed.</p>
+      </details>
+      
+      <details>
+        <summary>Is there an iPhone app?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>Not yet. Kin is on Google Play today, and the iPhone app is being built now.</p>
+      </details>
+      
+      <details>
+        <summary>Who can see my routes?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>Only the people you share them with. A route leaves your phone when you post that activity, create a segment, or turn on Beacon for a run. You can stop sharing route maps at any time in Settings.</p>
+      </details>
+      
+      <details>
+        <summary>How many languages does Kin speak?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>25, from Arabic to Vietnamese.</p>
+      </details>
+      
+      <details>
+        <summary>How do I delete my account?<span class="faq-icon">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/>
+</svg>
+</span></summary>
+        <p>From inside the app, in Settings. Everything stored on the server is removed with it. <a href="/delete-account.html">See exactly what is deleted</a>.</p>
+      </details>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="cta">
+  <div class="container cta-inner">
+    <h2>Your next run starts with a friend.</h2>
+    <p>Download Kin, add the people who push you, and see who&rsquo;s ahead by Sunday.</p>
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Get Kin on Google Play</a>
+  </div>
+</section>
+
+
 
 </main>
 
-<footer>
+<footer class="footer">
   <div class="container">
-    <span>&copy; 2026 Kin</span>
-    <nav aria-label="Footer">
-      <a href="/privacy.html">Privacy</a>
-      <a href="/delete-account.html">Delete account</a>
-      <a href="mailto:privacy@kinsteps.app">Contact</a>
-    </nav>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/" aria-label="Kin home">
+<span class="logo-mark" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18"/><path d="M19 4l-9 8 9 8"/></svg></span>KIN
+</a>
+        <p>Run, walk and ride with the people who push you.</p>
+      </div>
+      
+      <nav class="footer-col" aria-label="The app">
+        <h2>The app</h2>
+        <a href="/#track">Track</a><a href="/#compete">Compete</a><a href="/#share">Share</a><a href="/#together">Together</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Get Kin">
+        <h2>Get Kin</h2>
+        <a href="https://play.google.com/store/apps/details?id=io.github.reaemanz.kin">Google Play</a><a href="/#faq">iPhone (coming soon)</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Your data">
+        <h2>Your data</h2>
+        <a href="/privacy.html">Privacy policy</a><a href="/delete-account.html">Delete your account</a>
+      </nav>
+      
+      <nav class="footer-col" aria-label="Help">
+        <h2>Help</h2>
+        <a href="/#faq">Questions</a><a href="mailto:privacy@kinsteps.app">Contact</a>
+      </nav>
+      
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kin</span>
+      <span>Google Play and the Google Play logo are trademarks of Google LLC.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  // The nav gets a hairline once the page moves; sections ease in as they arrive.
-  (function () {
-    var nav = document.getElementById('nav');
-    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    var items = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      items.forEach(function (el) { el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-    items.forEach(function (el) { io.observe(el); });
-  })();
-</script>
+<script src="/assets/kin.js" defer></script>
 </body>
 </html>
